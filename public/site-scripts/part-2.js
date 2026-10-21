@@ -40,13 +40,14 @@ $$('[data-url]').forEach(a => {
   const u = CONFIG.urls[a.dataset.url];
   if (u) { a.href = u; a.target = '_blank'; a.rel = 'noopener'; } else a.remove();
 });
-if (!$$('#ctaRow [data-url]').length) $('#ctaFallback').hidden = false;
+if (!$('#ctaRow [data-url]').length) { const ctaFallback = $('#ctaFallback'); if (ctaFallback) ctaFallback.hidden = false; }
 $$('[data-social]').forEach(li => {
   const u = CONFIG.social[li.dataset.social];
   if (u) { const a = $('a', li); a.href = u; if (/^https?:/i.test(u)) { a.target = '_blank'; a.rel = 'noopener'; } } else li.remove();
 });
 const socials = Object.values(CONFIG.social).filter(Boolean);
-if (!$$('#communityCol li').length) $('#communityCol').remove();
+const communityCol = $('#communityCol');
+if (communityCol && !$('li', communityCol).length) communityCol.remove();
 const partner = $('[data-partner]');
 if (partner) { if (CONFIG.partnerEmail) $('a', partner).href = 'mailto:' + CONFIG.partnerEmail; else partner.remove(); }
 $('#yr').textContent = new Date().getFullYear();
