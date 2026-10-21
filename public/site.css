@@ -1424,3 +1424,61 @@ main > section:not(.hero) .btn-primary::after { width: 34px; height: 34px; }
   .doors { grid-template-columns: minmax(0, 1fr); }
   .market-grid, .cols3 { grid-template-columns: minmax(0, 1fr); }
 }
+
+
+/* Restore the animated Africa-to-world globe and give the closing building artwork
+   enough room to read as the visual anchor. Keep hero geometry untouched. */
+.world-globe {
+  width: min(100%, 620px);
+  max-width: 620px;
+  aspect-ratio: 1;
+  min-height: 300px;
+  overflow: visible;
+}
+.world-globe canvas.globe,
+canvas.globe#globeB {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 300px;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.world-globe.world-art { width: min(100%, 620px); aspect-ratio: 1; }
+.cta .ring-wrap {
+  width: min(560px, 84vw);
+  max-width: 560px;
+  margin: 0 auto 30px;
+  aspect-ratio: 1;
+}
+.cta .ring-wrap .cta-image {
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.18);
+  transform-origin: center;
+  filter: drop-shadow(0 22px 44px rgba(0,0,0,.3));
+}
+/* Keep the hero's original animated canvas cleanly layered behind its copy. */
+.hero { isolation: isolate; }
+.hero-stage { z-index: 0; overflow: hidden; }
+.hero-stage #heroFx {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.hero-copy { position: relative; z-index: 2; }
+@media (max-width: 940px) {
+  .world-globe { width: min(100%, 520px); min-height: 260px; }
+  .world-globe canvas.globe, canvas.globe#globeB { min-height: 260px; }
+  .cta .ring-wrap { width: min(500px, 88vw); margin-bottom: 24px; }
+  .cta .ring-wrap .cta-image { transform: scale(1.12); }
+}
+@media (max-width: 620px) {
+  .world-globe { width: min(100%, 420px); min-height: 220px; }
+  .world-globe canvas.globe, canvas.globe#globeB { min-height: 220px; }
+  .cta .ring-wrap { width: min(390px, 92vw); margin-bottom: 20px; }
+  .cta .ring-wrap .cta-image { transform: scale(1.08); }
+}
