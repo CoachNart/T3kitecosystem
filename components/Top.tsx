@@ -5,7 +5,6 @@ import Mission from "@/components/Mission";
 import Products from "@/components/Products";
 import Journeys from "@/components/Journeys";
 import World from "@/components/World";
-import Infrastructure from "@/components/Infrastructure";
 import Roadmap from "@/components/Roadmap";
 import Alliances from "@/components/Alliances";
 import Partners from "@/components/Partners";
@@ -23,7 +22,6 @@ export default function Top(): JSX.Element {
       <Products />
       <Journeys />
       <World />
-      <Infrastructure />
       <Roadmap />
       <Alliances />
       <Partners />
