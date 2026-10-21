@@ -48,7 +48,7 @@ $$('[data-social]').forEach(li => {
 const socials = Object.values(CONFIG.social).filter(Boolean);
 if (!$$('#communityCol li').length) $('#communityCol').remove();
 const partner = $('[data-partner]');
-if (CONFIG.partnerEmail) $('a', partner).href = 'mailto:' + CONFIG.partnerEmail; else partner.remove();
+if (partner) { if (CONFIG.partnerEmail) $('a', partner).href = 'mailto:' + CONFIG.partnerEmail; else partner.remove(); }
 $('#yr').textContent = new Date().getFullYear();
 
 /* ---------- nav: highlight the section in view ---------- */
@@ -492,7 +492,7 @@ function startObservers() {
 }
 const intro = $('#intro');
 if (CALM) { $$('.scatter,.rv').forEach(e => e.classList.add('in')); }
-else setTimeout(() => { intro.classList.add('leave'); startObservers(); setTimeout(() => intro.remove(), 1000); }, 2100);
+else if (intro) setTimeout(() => { intro.classList.add('leave'); startObservers(); setTimeout(() => intro.remove(), 1000); }, 2100);
 
 /* ================= KINETIC HERO TYPE ================= */
 const kinChars = $$('.kin .ch').map(el => ({el, x: 0, y: 0, r: 0}));
