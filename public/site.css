@@ -1652,3 +1652,36 @@ canvas.globe#globeB {
   #alliances .al-grid>div,
   #alliances .al-grid>div:nth-child(n+4){flex-basis: min(420px, 44vw);}
 }
+
+
+/* Team carousel — consistent horizontal snap track on desktop and mobile. */
+#team .tm-grid{
+  display:flex !important;
+  gap:16px;
+  margin-top:28px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:2px 5vw 18px;
+  margin-inline:-5vw;
+  scroll-snap-type:x mandatory;
+  scroll-padding-inline:5vw;
+  overscroll-behavior-x:contain;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+#team .tm-grid::-webkit-scrollbar{display:none}
+#team .tm-grid>.tm{
+  flex:0 0 78%;
+  min-width:0;
+  grid-column:auto;
+  scroll-snap-align:center;
+}
+#team .tm-ph{max-width:none;margin-inline:0}
+@media(min-width:701px){
+  #team .tm-grid{padding:2px max(5vw, calc((100vw - 1080px)/2)) 22px;margin-inline:calc(-1 * max(0px, (100vw - 1080px)/2));}
+  #team .tm-grid>.tm{flex-basis:min(300px, 30vw)}
+}
+@media(max-width:700px){
+  #team .tm-grid>.tm{flex-basis:78%}
+}
+@media(prefers-reduced-motion:reduce){#team .tm-grid{scroll-behavior:auto}}
