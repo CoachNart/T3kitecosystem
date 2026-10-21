@@ -1259,3 +1259,168 @@ main > section:not(.hero) .lead{
 .site-footer .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px}
 @media(max-width:760px){.site-footer .footer-main{grid-template-columns:1fr;gap:28px}.site-footer .footer-brand{max-width:100%}.site-footer .footer-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px}.site-footer .footer-company{grid-row:span 2}.site-footer .footer-disclaimer{margin-top:22px}.site-footer .footer-bottom{align-items:flex-start;flex-wrap:wrap}}
 @media(max-width:420px){.site-footer .footer-links{grid-template-columns:1fr 1fr}.site-footer .footer-company{grid-row:auto}.site-footer .footer-bottom{font-size:.78rem}}
+
+
+/* FINAL CONTENT SCALE FIX — intentionally excludes the hero and its children.
+   Reduce the rest of the page without transform-scaling layouts or breaking reflow. */
+main > section:not(.hero) {
+  padding-block: clamp(38px, 4.4vw, 66px);
+}
+main > section.roadmap { padding-top: clamp(24px, 2.8vw, 36px); }
+main > section:not(.hero) > .wrap,
+main > section:not(.hero) .wrap {
+  width: min(1100px, calc(100% - 40px));
+}
+main > section:not(.hero) h2 {
+  font-size: clamp(1.75rem, 3.1vw, 2.8rem);
+  line-height: 1.1;
+}
+main > section:not(.hero) h3 { font-size: clamp(1.02rem, 1.35vw, 1.18rem); }
+main > section:not(.hero) .lead {
+  font-size: clamp(.94rem, 1.05vw, 1.06rem);
+  line-height: 1.55;
+}
+main > section:not(.hero) p,
+main > section:not(.hero) li { line-height: 1.55; }
+main > section:not(.hero) .btn {
+  min-height: 44px;
+  padding-inline: 20px;
+  gap: 10px;
+  font-size: .9rem;
+}
+main > section:not(.hero) .btn-primary { padding-left: 20px; padding-right: 5px; }
+main > section:not(.hero) .btn-primary::after { width: 34px; height: 34px; }
+.mission .lead { margin-top: 14px; }
+.pillars { margin-top: 34px; }
+.pillar { gap: 22px; padding: 24px 0; }
+.pillar b { font-size: clamp(1.8rem, 3.8vw, 3.2rem); }
+.prod-head { margin-bottom: 44px; }
+.prod-head .lead { margin-top: 13px; }
+.feature { gap: clamp(24px, 3.5vw, 44px); }
+.feature + .feature { margin-top: 68px; }
+.f-tag { padding: 4px 10px; font-size: .72rem; margin-bottom: 12px; }
+.f-text h2 { font-size: clamp(1.65rem, 2.7vw, 2.25rem); margin-bottom: 11px; }
+.f-text p { margin-bottom: 14px; }
+.ticks { gap: 7px; margin-bottom: 18px; }
+.card { padding: 18px; border-radius: 18px; }
+.step { padding: 10px 12px; gap: 10px; }
+.step .ic { width: 30px; height: 30px; }
+.code { padding: 11px 13px; min-height: 88px; }
+.lb { height: 166px; }
+.lb-row { height: 36px; padding-inline: 11px; }
+.tile { padding: 10px; gap: 8px; }
+.chart canvas { height: 156px; }
+.doors { gap: 28px; margin-top: 32px; }
+.door { padding: 14px 48px 14px 18px; border-radius: 15px; }
+.door-panel { padding: 26px; min-height: 250px; }
+.door-panel h3 { font-size: clamp(1.45rem, 2.4vw, 2rem); }
+.door-panel .btn { margin-top: 16px; }
+.world-grid { gap: 22px; }
+.world-globe { max-width: 490px; }
+.world h2 { margin-bottom: 12px; }
+.world .lead { margin-bottom: 17px; }
+.pr { padding: 13px 15px; gap: 11px; }
+.pr .ds { width: 22px; height: 22px; }
+.pr b { font-size: .92rem; }
+.pr span { font-size: .82rem; }
+.market-grid { gap: 12px; margin-top: 30px; }
+.m { padding: 18px; min-height: 145px; }
+.stack { margin-top: 32px; }
+.layer { grid-template-columns: 190px minmax(0, 1fr); gap: 16px; padding: 16px 20px; }
+.modular { margin-top: 22px; padding-left: 16px; font-size: 1rem; }
+.cols3 { gap: 12px; margin-top: 32px; }
+.pcol { padding: 22px; }
+.token-grid { gap: 34px; }
+.token h2 { font-size: clamp(2.1rem, 4.6vw, 3.8rem); }
+.spec-row { padding: 12px 18px; }
+.util { gap: 7px; margin: 16px 0; }
+.util span { padding: 7px 11px; font-size: .8rem; }
+.note { padding: 13px 16px; font-size: .86rem; }
+.vision-in { gap: 32px; }
+.vision .intro { margin-bottom: 14px; }
+.some { font-size: clamp(2rem, 4.4vw, 3.8rem); }
+.vision p.after-p { margin-top: 17px; }
+.vbox { padding: 25px; }
+.vbox h3 { font-size: clamp(1.45rem, 2.3vw, 2rem); }
+.ring-wrap { width: min(290px, 66vw); margin-bottom: 20px; }
+.cta h2 { font-size: clamp(1.8rem, 4vw, 3.3rem); }
+.cta p { margin: 14px auto 22px; }
+.rm-grid { gap: 34px; }
+.rm-list { gap: 8px; }
+.rm-list > li { padding-left: 46px; }
+.rm-card summary { padding: 12px 15px; gap: 10px; }
+.rm-t b { font-size: .98rem; }
+.rm-body { padding: 3px 15px 16px; }
+.rm-sub { margin-top: 12px; }
+.rm-pts { gap: 7px 16px; margin-top: 10px; font-size: .84rem; }
+.rm-groups { gap: 16px 20px; margin-top: 14px; }
+.rm-path span { padding: 6px 11px; font-size: .8rem; }
+.tm-grid { gap: 30px 16px; margin-top: 34px; }
+.tm-ph { border-radius: 15px; }
+.tm h3, .tm:nth-child(-n+3) h3 { font-size: 1.05rem; margin-top: 10px; }
+.tm p { font-size: .84rem; }
+@media (max-width: 940px) {
+  main > section:not(.hero) { padding-block: 42px; }
+  main > section.roadmap { padding-top: 24px; }
+  main > section:not(.hero) > .wrap,
+  main > section:not(.hero) .wrap { width: calc(100% - 36px); }
+  .feature { gap: 24px; }
+  .feature + .feature { margin-top: 52px; }
+  .prod-head { margin-bottom: 32px; }
+  .world-grid, .vision-in { gap: 22px; }
+  .token-grid { gap: 24px; }
+  .layer { grid-template-columns: 155px minmax(0, 1fr); gap: 14px; padding: 15px 17px; }
+  .cols3 { margin-top: 26px; }
+}
+@media (max-width: 620px) {
+  main > section:not(.hero) { padding-block: 34px; }
+  main > section.roadmap { padding-top: 20px; }
+  main > section:not(.hero) > .wrap,
+  main > section:not(.hero) .wrap { width: calc(100% - 32px); }
+  main > section:not(.hero) h2 { font-size: clamp(1.55rem, 7vw, 2.05rem); }
+  main > section:not(.hero) .lead { font-size: .93rem; line-height: 1.52; }
+  main > section:not(.hero) .btn { min-height: 40px; padding-inline: 15px; font-size: .82rem; }
+  main > section:not(.hero) .btn-primary { padding-left: 16px; padding-right: 4px; }
+  main > section:not(.hero) .btn-primary::after { width: 30px; height: 30px; }
+  .pillars { margin-top: 24px; }
+  .pillar { gap: 14px; padding: 18px 0; }
+  .pillar b { font-size: clamp(1.65rem, 8.5vw, 2.3rem); }
+  .prod-head { margin-bottom: 24px; }
+  .feature { gap: 20px; }
+  .feature + .feature { margin-top: 38px; }
+  .f-text h2 { font-size: clamp(1.5rem, 6.8vw, 1.9rem); }
+  .card { padding: 14px; border-radius: 15px; }
+  .step { padding: 9px 10px; }
+  .code { padding: 10px; min-height: 78px; font-size: .7rem; }
+  .lb { height: 148px; }
+  .lb-row { height: 33px; }
+  .chart canvas { height: 136px; }
+  .doors { margin-top: 22px; gap: 14px; }
+  .door { padding: 12px 42px 12px 14px; }
+  .door-panel { padding: 18px; min-height: 0; }
+  .world-globe { max-width: 100%; }
+  .market-grid { margin-top: 22px; gap: 9px; }
+  .m { padding: 14px; min-height: 0; }
+  .stack, .cols3, .tm-grid { margin-top: 24px; }
+  .layer { grid-template-columns: minmax(0, 1fr); gap: 5px; padding: 13px 14px; }
+  .pcol { padding: 18px 15px; }
+  .token-grid { gap: 20px; }
+  .spec-row { padding: 10px 12px; gap: 8px; }
+  .util span { padding: 6px 9px; font-size: .76rem; }
+  .vbox { padding: 19px 16px; }
+  .some { font-size: clamp(1.75rem, 8.5vw, 2.35rem); }
+  .ring-wrap { width: min(230px, 64vw); margin-bottom: 16px; }
+  .cta h2 { font-size: clamp(1.65rem, 7.8vw, 2.25rem); }
+  .rm-grid { gap: 22px; }
+  .rm-card summary { padding: 11px 12px; }
+  .rm-body { padding: 3px 12px 14px; }
+  .tm-grid { gap: 22px 12px; }
+  .tm h3, .tm:nth-child(-n+3) h3 { font-size: .95rem; }
+  .tm p { font-size: .78rem; }
+}
+@media (max-width: 380px) {
+  main > section:not(.hero) > .wrap,
+  main > section:not(.hero) .wrap { width: calc(100% - 28px); }
+  .doors { grid-template-columns: minmax(0, 1fr); }
+  .market-grid, .cols3 { grid-template-columns: minmax(0, 1fr); }
+}
