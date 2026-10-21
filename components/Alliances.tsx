@@ -1,3 +1,5 @@
+"use client";
+
 /* Generated from the supplied source markup; preserve structure and styling. */
 import type { JSX } from "react";
 import { useEffect, useRef } from "react";
