@@ -56,41 +56,6 @@ export default function Mission(): JSX.Element {
             </g>
           </svg>
         </div>
-        <div className="pillars">
-          <div className="pillar rv">
-            <b>
-              Enter.
-            </b>
-            <p>
-              <strong>
-                Easier to enter
-              </strong>
-              Many doors instead of one path.
-            </p>
-          </div>
-          <div className="pillar rv">
-            <b>
-              Understand.
-            </b>
-            <p>
-              <strong>
-                Easier to understand
-              </strong>
-              Learning that goes from lessons to real projects.
-            </p>
-          </div>
-          <div className="pillar rv">
-            <b>
-              Participate.
-            </b>
-            <p>
-              <strong>
-                More meaningful to participate in
-              </strong>
-              Games, tools, rewards and community worth staying for.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
