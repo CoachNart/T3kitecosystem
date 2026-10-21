@@ -14,14 +14,14 @@ export default function Mission(): JSX.Element {
         <div className="ftwrap rv" aria-hidden="true">
           <svg id="ftSvg" viewBox="0 0 1000 420" preserveAspectRatio="xMidYMid meet">
             <defs>
-              <radialgradient id="ftGlow">
+              <radialGradient id="ftGlow">
                 <stop offset="0" stopColor="#00C6FF" stopOpacity=".55"></stop>
                 <stop offset="1" stopColor="#00C6FF" stopOpacity="0"></stop>
-              </radialgradient>
-              <lineargradient id="ftTrail" x1="0" x2="1">
+              </radialGradient>
+              <linearGradient id="ftTrail" x1="0" x2="1">
                 <stop offset="0" stopColor="#00C6FF" stopOpacity=".05"></stop>
                 <stop offset="1" stopColor="#00C6FF" stopOpacity=".5"></stop>
-              </lineargradient>
+              </linearGradient>
             </defs>
             <g className="ft-grid" id="ftGrid"></g>
             <path id="ftPath" className="ft-trail" d="M30,350 C200,355 250,245 410,255 C560,265 600,345 730,235 C810,165 860,105 935,88"></path>
