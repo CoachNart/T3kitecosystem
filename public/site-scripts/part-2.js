@@ -19,7 +19,7 @@ const CONFIG = {
 const CALM = document.documentElement.classList.contains('calm');
 const FINE = matchMedia('(pointer:fine)').matches;
 const $ = (s, r = document) => r.querySelector(s);
-const $ = (s, r = document) => r ? [...r.querySelectorAll(s)] : [];
+const $$ = (s, r = document) => r ? [...r.querySelectorAll(s)] : [];
 const rnd = (a, b) => a + Math.random() * (b - a);
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const D = Math.PI / 180;
