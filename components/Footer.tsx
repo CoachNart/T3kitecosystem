@@ -37,11 +37,6 @@ export default function Footer(): JSX.Element {
           </nav>
         </div>
 
-        <div className="footer-disclaimer">
-          <span className="footer-disclaimer-label">Important</span>
-          <p>KitSetups provides market information and potential trading opportunities for research purposes only. Nothing on this website is financial advice. Always do your own research and make independent decisions.</p>
-        </div>
-
         <div className="footer-bottom">
           <span>© <span id="yr">2026</span> T3Kit. All rights reserved.</span>
           <a href="#top" className="footer-back-top">Back to top <span aria-hidden="true">↑</span></a>
