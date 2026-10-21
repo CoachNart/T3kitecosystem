@@ -11,8 +11,7 @@ export default function Footer(): JSX.Element {
               <svg viewBox="0 0 961 820" aria-hidden="true"><use href="#mark" /></svg>
               <span>T3Kit<span className="footer-brand-dot">.</span></span>
             </a>
-            <p className="footer-tagline">The next chapter of Web3 starts with people.</p>
-            <p className="footer-description">Tools, experiences and opportunities for the people shaping what comes next.</p>
+            <p className="footer-tagline">Web3, for everyone, everywhere.</p>
             <a className="footer-contact-link" href="#alliances">Build with T3Kit <span aria-hidden="true">↗</span></a>
           </div>
 
@@ -35,15 +34,6 @@ export default function Footer(): JSX.Element {
                 <li><a href="#kit">$KIT token</a></li>
               </ul>
             </div>
-            <div className="footer-col" id="communityCol">
-              <h4>Find your people</h4>
-              <ul>
-                <li data-social="x"><a>X <span aria-hidden="true">↗</span></a></li>
-                <li data-social="telegram"><a>Telegram <span aria-hidden="true">↗</span></a></li>
-                <li data-social="discord"><a>Discord <span aria-hidden="true">↗</span></a></li>
-                <li data-social="docs"><a>Documentation <span aria-hidden="true">↗</span></a></li>
-              </ul>
-            </div>
           </nav>
         </div>
 
@@ -54,7 +44,6 @@ export default function Footer(): JSX.Element {
 
         <div className="footer-bottom">
           <span>© <span id="yr">2026</span> T3Kit. All rights reserved.</span>
-          <span className="footer-bottom-note">Built for the people building Web3.</span>
           <a href="#top" className="footer-back-top">Back to top <span aria-hidden="true">↑</span></a>
         </div>
       </div>
