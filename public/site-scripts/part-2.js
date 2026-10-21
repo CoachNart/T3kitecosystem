@@ -225,9 +225,10 @@ class Globe {
     });
   }
 }
-const gB = new Globe($('#globeB'), {tilt: .22, focus: 20, africa: true, gap: [350, 1100]});
-const globes = [gB];
-if (CALM) gB.draw(0);
+const globeCanvas = $('#globeB');
+const gB = globeCanvas ? new Globe(globeCanvas, {tilt: .22, focus: 20, africa: true, gap: [350, 1100]}) : null;
+const globes = gB ? [gB] : [];
+if (CALM && gB) gB.draw(0);
 
 /* ================= HERO BACKGROUND: a flight through a canyon of striped towers =================
    Motion design in the spirit of architectural film: the camera glides forward between
