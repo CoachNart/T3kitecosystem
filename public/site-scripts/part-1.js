@@ -1,3 +1,4 @@
 
   document.documentElement.classList.add('js');
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('calm');
+  // Keep the site's animation engine active; the global `calm` flag stopped
+  // the hero canvas loop and every scroll/card reveal on reduced-motion devices.
