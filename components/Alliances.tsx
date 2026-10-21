@@ -50,32 +50,7 @@ export default function Alliances(): JSX.Element {
               </a>
             </article>
           </div>
-              </div>
-              <h3>
-                BARIN
-              </h3>
-              <p>
-                The BARIN Mining Quest is live on the T3Kit Opportunities Hub. Learn about mineral tokenization through educational quests, earn XP and convert it into $BARIN tokens.
-              </p>
-              <ul className="al-tags">
-                <li>
-                  Opportunities Hub
-                </li>
-                <li>
-                  Quests
-                </li>
-                <li>
-                  XP
-                </li>
-              </ul>
-              <a className="al-link" href="https://x.com/Barinbmt" target="_blank" rel="noopener">
-                @Barinbmt
-                <svg viewBox="0 0 20 20" aria-hidden="true">
-                  <path d="M6 14L14 6M7.5 6H14v6.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path>
-                </svg>
-              </a>
-            </article>
-          </div>
+
           <div className="rv">
             <article className="al st">
               <div className="al-top">
