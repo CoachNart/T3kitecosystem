@@ -3,7 +3,22 @@
 import { useEffect, useRef } from "react";
 import type { JSX } from "react";
 
-export default function Team(): JSX.Element {\n  const carouselRef = useRef<HTMLDivElement>(null);\n\n  useEffect(() => {\n    const track = carouselRef.current;\n    if (!track || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;\n    const timer = window.setInterval(() => {\n      const firstCard = track.querySelector<HTMLElement>(".tm");\n      if (!firstCard) return;\n      const gap = Number.parseFloat(window.getComputedStyle(track).columnGap || "0") || 0;\n      const step = firstCard.getBoundingClientRect().width + gap;\n      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;\n      track.scrollTo({ left: atEnd ? 0 : track.scrollLeft + step, behavior: "smooth" });\n    }, 4800);\n    return () => window.clearInterval(timer);\n  }, []);
+export default function Team(): JSX.Element {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const track = carouselRef.current;
+    if (!track || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => {
+      const firstCard = track.querySelector<HTMLElement>(".tm");
+      if (!firstCard) return;
+      const gap = Number.parseFloat(window.getComputedStyle(track).columnGap || "0") || 0;
+      const step = firstCard.getBoundingClientRect().width + gap;
+      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
+      track.scrollTo({ left: atEnd ? 0 : track.scrollLeft + step, behavior: "smooth" });
+    }, 4800);
+    return () => window.clearInterval(timer);
+  }, []);
   return (
     <section className="team" id="team">
       <div className="wrap">
