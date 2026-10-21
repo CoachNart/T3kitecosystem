@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+dist/
+build/
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts.tmp
+
+# Environment secrets
+.env
+.env.*
+!.env.example
