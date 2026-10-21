@@ -1733,3 +1733,14 @@ canvas.globe#globeB {
   .roadmap .rm-card:not([open]) .rm-t small { font-size: .67rem; }
   .roadmap .rm-card:not([open]) .rm-st { padding: 3px 7px; font-size: .64rem; }
 }
+
+
+/* Keep the Explore and Ecosystem footer links directly on the footer background. */
+.site-footer .footer-links,
+.site-footer .footer-col,
+.site-footer .footer-col ul {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  outline: 0;
+}
