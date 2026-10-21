@@ -1,4 +1,6 @@
-
+(() => {
   document.documentElement.classList.add('js');
-  // Keep the site's animation engine active; the global `calm` flag stopped
-  // the hero canvas loop and every scroll/card reveal on reduced-motion devices.
+  // Keep the site's motion engine enabled; remove any stale calm flag that
+  // would stop the hero canvas, scroll-linked layers, and reveal animations.
+  document.documentElement.classList.remove('calm');
+})();
