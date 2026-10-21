@@ -1623,29 +1623,32 @@ canvas.globe#globeB {
 }
 
 
-/* Mobile-only partner carousel: desktop card grid remains unchanged. */
-@media(max-width:700px){
-  #alliances .al-grid{
-    display:flex !important;
-    gap:16px;
-    margin-top:28px;
-    overflow-x:auto;
-    overflow-y:hidden;
-    padding:2px 5vw 18px;
-    margin-inline:-5vw;
-    scroll-snap-type:x mandatory;
-    scroll-padding-inline:5vw;
-    overscroll-behavior-x:contain;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-  }
-  #alliances .al-grid::-webkit-scrollbar{display:none}
+/* Shared partner carousel on mobile and desktop. */
+#alliances .al-grid{
+  display:flex !important;
+  gap:16px;
+  margin-top:28px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:2px 5vw 18px;
+  margin-inline:-5vw;
+  scroll-snap-type:x mandatory;
+  scroll-padding-inline:5vw;
+  overscroll-behavior-x:contain;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+#alliances .al-grid::-webkit-scrollbar{display:none}
+#alliances .al-grid>div,
+#alliances .al-grid>div:nth-child(n+4){
+  flex:0 0 86%;
+  min-width:0;
+  grid-column:auto;
+  scroll-snap-align:center;
+}
+#alliances .al{height:100%;padding:20px}
+@media(min-width:701px){
+  #alliances .al-grid{padding:2px max(5vw, calc((100vw - 1080px)/2)) 22px; margin-inline:calc(-1 * max(0px, (100vw - 1080px)/2));}
   #alliances .al-grid>div,
-  #alliances .al-grid>div:nth-child(n+4){
-    flex:0 0 86%;
-    min-width:0;
-    grid-column:auto;
-    scroll-snap-align:center;
-  }
-  #alliances .al{height:100%;padding:20px}
+  #alliances .al-grid>div:nth-child(n+4){flex-basis: min(420px, 44vw);}
 }
