@@ -1824,3 +1824,39 @@ canvas.globe#globeB {
   background: #9AC8CF;
   border-color: #9AC8CF;
 }
+
+
+/* Restore the original cyan hue in Journeys; only lower its brightness. */
+#journeys.band {
+  background-color: #00A9D6;
+  background-image:
+    radial-gradient(rgba(1, 26, 35, .17) 1.2px, transparent 1.7px),
+    linear-gradient(135deg, #00A9D6 0%, #009BC5 55%, #00A4CF 100%);
+  color: #011A23;
+}
+#journeys.band .lead {
+  color: rgba(1, 26, 35, .78);
+}
+#journeys .door[aria-selected="true"] {
+  background: linear-gradient(180deg, #06303F, #011A23);
+  color: #FFFFFF;
+  border-color: #011A23;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 14px 30px -14px rgba(1,26,35,.9);
+}
+#journeys .door[aria-selected="true"]::after {
+  background-color: #00A9D6;
+  border-color: #00A9D6;
+}
+#journeys .door-panel h3 {
+  color: #00A9D6;
+}
+#journeys .door-panel .btn-primary {
+  background: #00A9D6;
+  border-color: #00A9D6;
+  color: #011A23;
+  box-shadow: none;
+}
+#journeys .door-panel .btn-primary:hover {
+  background: #19B2D9;
+  border-color: #19B2D9;
+}
