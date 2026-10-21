@@ -12,6 +12,15 @@ export default function SiteScripts() {
     if (window.__t3kitScriptsStarted) return;
     window.__t3kitScriptsStarted = true;
 
+    // Safety net: a legacy intro overlay must never block the site if a script fails.
+    const introFailsafe = window.setTimeout(() => {
+      const intro = document.getElementById("intro");
+      if (intro) {
+        intro.classList.add("leave");
+        window.setTimeout(() => intro.remove(), 700);
+      }
+    }, 4500);
+
     const paths = [
       "/site-scripts/part-1.js",
       "/site-scripts/part-2.js",
@@ -34,6 +43,7 @@ export default function SiteScripts() {
       console.error("T3Kit site scripts failed to initialize:", error);
       window.__t3kitScriptsStarted = false;
     });
+    return () => window.clearTimeout(introFailsafe);
   }, []);
 
   return null;
