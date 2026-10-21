@@ -1,6 +1,10 @@
 
 (() => {
-const R=document.documentElement,wp=document.getElementById('wp'),nv=document.querySelector('body>nav'),links=[...wp.querySelectorAll('.wpnav a')],bar=wp.querySelector('.wpbar');
+const R=document.documentElement,wp=document.getElementById('wp');
+// The legacy whitepaper/infrastructure section is not part of the current page.
+// Exit safely when its markup is absent so the site scripts never crash.
+if(!wp)return;
+const nv=document.querySelector('body>nav'),links=[...wp.querySelectorAll('.wpnav a')],bar=wp.querySelector('.wpbar');
 const sh=()=>R.style.setProperty('--navh',(nv?nv.offsetHeight:64)+'px');sh();addEventListener('resize',sh);
 const jump=id=>{const el=id&&document.getElementById(id);if(el)el.scrollIntoView({behavior:'instant'});else scrollTo({top:0,behavior:'instant'})};
 const view=(on,id)=>{R.classList.toggle('wpv',on);sh();jump(id)};
