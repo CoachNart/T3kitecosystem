@@ -6,7 +6,7 @@ export default function Hero(): JSX.Element {
     <header className="hero">
       <div className="hero-stage" aria-hidden="true">
         <canvas id="heroFx"></canvas>
-        <video id="heroVideo" muted={true} loop={true} playsInline="" preload="auto" hidden={true}></video>
+        <video id="heroVideo" muted={true} loop={true} playsInline preload="auto" hidden={true}></video>
       </div>
       <div className="wrap">
         <div className="hero-copy">
