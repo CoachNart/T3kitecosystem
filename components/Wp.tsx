@@ -28,7 +28,7 @@ export default function Wp(): JSX.Element {
           <a className="wpback" href="#top">← Back to T3Kit</a>
           <span className="wptag">Ecosystem whitepaper</span>
           <h1>
-            Building the Infrastructure, Products, and Community for the Next Generation of <em>Web3.</em>
+            A Connected Ecosystem for <em>Web3.</em>
           </h1>
           <p className="wpabs">
             T3Kit is a multi-layer Web3 ecosystem connecting products, infrastructure, and community to help people learn, build, participate, and grow in the digital economy.
