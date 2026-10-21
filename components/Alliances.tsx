@@ -1,7 +1,34 @@
 /* Generated from the supplied source markup; preserve structure and styling. */
 import type { JSX } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Alliances(): JSX.Element {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const track = carouselRef.current;
+    if (!track) return;
+    const mobile = window.matchMedia("(max-width: 700px)");
+    let timer: number | undefined;
+    const start = () => {
+      if (timer !== undefined) window.clearInterval(timer);
+      if (!mobile.matches) return;
+      timer = window.setInterval(() => {
+        const first = track.firstElementChild as HTMLElement | null;
+        if (!first) return;
+        const step = first.getBoundingClientRect().width + 16;
+        const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
+        track.scrollTo({ left: atEnd ? 0 : track.scrollLeft + step, behavior: "smooth" });
+      }, 4800);
+    };
+    start();
+    mobile.addEventListener("change", start);
+    return () => {
+      if (timer !== undefined) window.clearInterval(timer);
+      mobile.removeEventListener("change", start);
+    };
+  }, []);
+
   return (
     <section className="alliances center" id="alliances">
       <div className="wrap">
@@ -14,7 +41,7 @@ export default function Alliances(): JSX.Element {
         <p className="lead rv" style={{marginTop: "24px"}}>
           Campus communities, DAOs and projects are teaming up with T3Kit to bring learning, opportunities and onboarding closer to their people.
         </p>
-        <div className="al-grid">
+        <div className="al-grid" ref={carouselRef} aria-label="T3Kit ecosystem partners">
           <div className="rv">
             <article className="al">
               <div className="al-top">
