@@ -645,8 +645,10 @@ function tick(t) {
     });
     lines.forEach(s => { const r = s.getBoundingClientRect(); s.style.setProperty('--f', (clamp((vh * .82 - r.top) / (vh * .3)) * 100).toFixed(1) + '%'); });
     ang += .12 + Math.abs(scrollVel) * .12 + Math.sin(t * .0016) * .1;
-    ringText.style.transform = `rotate(${ang}deg)`;
-    core.style.transform = `rotate(${Math.sin(t * .0009) * 10 + (mouse.x - .5) * 22}deg) scale(${1 + Math.sin(t * .002) * .04})`;
+    // The closing CTA artwork no longer contains the legacy ringText/core nodes.
+    // Guard these optional effects so their absence cannot crash the entire animation loop.
+    if (ringText) ringText.style.transform = `rotate(${ang}deg)`;
+    if (core) core.style.transform = `rotate(${Math.sin(t * .0009) * 10 + (mouse.x - .5) * 22}deg) scale(${1 + Math.sin(t * .002) * .04})`;
     if (cur.seen && y < vh) kinetic(cur.x, cur.y);
     tickStars(t);
   }
