@@ -1086,8 +1086,6 @@ main > section:not(.hero) .lead{
 .pillar p strong{font-size:1.04rem}
 .prod-head{margin-bottom:64px}
 .prod-head .lead{margin-top:18px}
-.feature{gap:clamp(30px,4.5vw,58px)}
-.feature+.feature{margin-top:96px}
 .f-tag{padding:5px 12px;font-size:.8rem;margin-bottom:16px}
 .f-text h2{font-size:clamp(1.85rem,3.2vw,2.65rem);margin-bottom:14px}
 .f-text p{margin-bottom:18px}
@@ -1097,11 +1095,8 @@ main > section:not(.hero) .lead{
 .step{padding:12px 14px;gap:12px}
 .step .ic{width:34px;height:34px}
 .code{padding:13px 15px;min-height:104px}
-.lb{height:190px}
-.lb-row{height:42px;padding:0 13px}
 .tiles{gap:9px}
 .tile{padding:12px;gap:10px}
-.chart canvas{height:180px}
 .doors{gap:42px;margin-top:42px}
 .door{padding:17px 56px 17px 20px;border-radius:16px}
 .door-panel{padding:34px;min-height:300px}
@@ -1120,7 +1115,6 @@ main > section:not(.hero) .lead{
 .m{padding:22px;min-height:175px}
 .m h3{margin-bottom:8px}
 .stack{margin-top:42px}
-.layer{grid-template-columns:220px 1fr;gap:20px;padding:20px 24px}
 .modular{margin-top:28px;padding-left:20px;font-size:1.1rem}
 .cols3{gap:15px;margin-top:42px}
 .pcol{padding:28px}
@@ -1139,7 +1133,6 @@ main > section:not(.hero) .lead{
 .vision p.after-p{margin-top:22px}
 .vbox{padding:32px}
 .vbox h3{font-size:clamp(1.7rem,2.8vw,2.35rem)}
-.ring-wrap{width:min(330px,72vw);margin-bottom:26px}
 .cta h2{font-size:clamp(2rem,4.8vw,4rem)}
 .cta p{margin:18px auto 28px}
 .rm-grid{gap:48px}
@@ -1170,14 +1163,11 @@ main > section:not(.hero) .lead{
 @media(max-width:940px){
   main > section:not(.hero){padding:48px 0}
   main > section.roadmap{padding-top:26px}
-  .feature{gap:32px}
-  .feature+.feature{margin-top:64px}
   .prod-head{margin-bottom:42px}
   .world-grid{gap:22px}
   .token-grid{gap:30px}
   .vision-in{gap:30px}
   .tm-grid{gap:30px 16px;margin-top:36px}
-  .layer{grid-template-columns:180px 1fr;padding:18px 20px}
   .cols3{margin-top:32px}
 }
 @media(max-width:620px){
@@ -1189,8 +1179,6 @@ main > section:not(.hero) .lead{
   .pillar{gap:12px;padding:22px 0}
   .pillar b{font-size:clamp(1.9rem,10vw,2.7rem)}
   .prod-head{margin-bottom:30px}
-  .feature{gap:26px}
-  .feature+.feature{margin-top:48px}
   .f-tag{margin-bottom:12px}
   .f-text h2{font-size:clamp(1.7rem,7.5vw,2.15rem)}
   .f-text p{margin-bottom:14px}
@@ -1198,9 +1186,6 @@ main > section:not(.hero) .lead{
   .card{padding:15px;border-radius:18px}
   .step{padding:10px 11px}
   .code{padding:11px 12px;font-size:.72rem;min-height:92px}
-  .lb{height:172px}
-  .lb-row{height:38px}
-  .chart canvas{height:150px}
   .doors{margin-top:28px;gap:18px}
   .door{padding:14px 50px 14px 15px}
   .door-panel{padding:22px;min-height:0}
@@ -1211,7 +1196,6 @@ main > section:not(.hero) .lead{
   .market-grid{margin-top:28px;gap:10px}
   .m{padding:17px;min-height:0}
   .stack,.cols3,.tm-grid{margin-top:30px}
-  .layer{grid-template-columns:1fr;gap:6px;padding:15px 16px}
   .modular{margin-top:20px;font-size:1rem;padding-left:14px}
   .pcol{padding:22px 18px}
   .pcol::before{left:18px}
@@ -1224,7 +1208,6 @@ main > section:not(.hero) .lead{
   .note{padding:13px 15px}
   .vbox{padding:22px 18px}
   .some{font-size:clamp(1.9rem,9.4vw,2.7rem)}
-  .ring-wrap{width:min(260px,68vw);margin-bottom:20px}
   .cta h2{font-size:clamp(1.9rem,8.8vw,2.7rem)}
   .cta p{margin:15px auto 22px}
   .rm-grid{gap:28px}
@@ -1601,4 +1584,40 @@ canvas.globe#globeB {
 }
 @media (max-width: 760px) {
   body::after { content: none; }
+}
+
+
+/* Stronger T3Kit framing and card edges. Keep animation-owned sizing untouched. */
+@media (min-width: 761px) {
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 12px;
+    z-index: 90;
+    border: 2px solid rgba(0, 198, 255, .34);
+    border-radius: 24px;
+    pointer-events: none;
+    box-shadow: inset 0 0 48px rgba(0, 198, 255, .035), 0 0 0 1px rgba(0, 198, 255, .08);
+  }
+}
+@media (max-width: 760px) {
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 7px;
+    z-index: 90;
+    border: 1px solid rgba(0, 198, 255, .2);
+    border-radius: 15px;
+    pointer-events: none;
+  }
+}
+.card, .door, .door-panel, .pr, .m, .pcol, .vbox, .rm-card, .tm-ph,
+#alliances .al, .site-footer .footer-contact-link, .site-footer .footer-back-top span {
+  border-color: rgba(0, 198, 255, .24);
+}
+.card, .door-panel, .pr, .m, .pcol, .vbox, .rm-card, #alliances .al {
+  box-shadow: inset 0 1px 0 rgba(226, 248, 255, .045), 0 10px 30px rgba(0, 0, 0, .12);
+}
+.card:hover, .door:hover, .pr:hover, .m:hover, .pcol:hover, .rm-card:hover, #alliances .al:hover {
+  border-color: rgba(0, 198, 255, .42);
 }
