@@ -1064,3 +1064,185 @@ a.btn[data-url]:hover::after{transform:translateX(3px)!important}
 @media(prefers-reduced-motion:reduce){
   .footer-col a,.footer-col a span,.footer-back-top span{transition:none}
 }
+
+
+/* Compact content system — keep the hero's scale and atmosphere untouched. */
+main > section:not(.hero){
+  padding:clamp(54px,6.2vw,88px) 0;
+}
+main > section.roadmap{padding-top:clamp(28px,3vw,42px)}
+main > section:not(.hero) h2{
+  font-size:clamp(1.9rem,3.8vw,3.15rem);
+  line-height:1.08;
+}
+main > section:not(.hero) .lead{
+  font-size:clamp(1rem,1.25vw,1.12rem);
+  line-height:1.6;
+}
+.mission .lead{margin-top:18px}
+.pillars{margin-top:48px}
+.pillar{gap:28px;padding:32px 0}
+.pillar b{font-size:clamp(2rem,4.8vw,4rem)}
+.pillar p strong{font-size:1.04rem}
+.prod-head{margin-bottom:64px}
+.prod-head .lead{margin-top:18px}
+.feature{gap:clamp(30px,4.5vw,58px)}
+.feature+.feature{margin-top:96px}
+.f-tag{padding:5px 12px;font-size:.8rem;margin-bottom:16px}
+.f-text h2{font-size:clamp(1.85rem,3.2vw,2.65rem);margin-bottom:14px}
+.f-text p{margin-bottom:18px}
+.ticks{gap:9px;margin-bottom:24px}
+.card{padding:22px;border-radius:22px}
+.card-head{margin-bottom:14px}
+.step{padding:12px 14px;gap:12px}
+.step .ic{width:34px;height:34px}
+.code{padding:13px 15px;min-height:104px}
+.lb{height:190px}
+.lb-row{height:42px;padding:0 13px}
+.tiles{gap:9px}
+.tile{padding:12px;gap:10px}
+.chart canvas{height:180px}
+.doors{gap:42px;margin-top:42px}
+.door{padding:17px 56px 17px 20px;border-radius:16px}
+.door-panel{padding:34px;min-height:300px}
+.door-panel h3{font-size:clamp(1.8rem,3vw,2.5rem)}
+.door-panel .btn{margin-top:22px}
+.world-grid{gap:28px}
+.world-globe{max-width:560px}
+.world h2{margin-bottom:16px}
+.world .lead{margin-bottom:22px}
+.prin{gap:10px}
+.pr{padding:16px 18px;gap:14px}
+.pr .ds{width:25px;height:24px}
+.pr b{font-size:1rem}
+.pr span{font-size:.88rem}
+.market-grid{gap:14px;margin-top:40px}
+.m{padding:22px;min-height:175px}
+.m h3{margin-bottom:8px}
+.stack{margin-top:42px}
+.layer{grid-template-columns:220px 1fr;gap:20px;padding:20px 24px}
+.modular{margin-top:28px;padding-left:20px;font-size:1.1rem}
+.cols3{gap:15px;margin-top:42px}
+.pcol{padding:28px}
+.pcol::before{left:28px}
+.pcol h3{margin:8px 0 16px}
+.pcol ul{gap:9px;font-size:.92rem}
+.token-grid{gap:48px}
+.token h2{font-size:clamp(2.6rem,5.6vw,4.5rem)}
+.spec-row{padding:15px 22px}
+.util{gap:8px;margin:20px 0}
+.util span{padding:8px 14px;font-size:.86rem}
+.note{padding:16px 18px;font-size:.92rem}
+.vision-in{gap:44px}
+.vision .intro{margin-bottom:18px}
+.some{font-size:clamp(2.2rem,5.2vw,4.5rem)}
+.vision p.after-p{margin-top:22px}
+.vbox{padding:32px}
+.vbox h3{font-size:clamp(1.7rem,2.8vw,2.35rem)}
+.ring-wrap{width:min(330px,72vw);margin-bottom:26px}
+.cta h2{font-size:clamp(2rem,4.8vw,4rem)}
+.cta p{margin:18px auto 28px}
+.rm-grid{gap:48px}
+.rm-list{gap:10px}
+.rm-list>li{padding-left:54px}
+.rm-card summary{padding:15px 18px;gap:12px}
+.rm-t b{font-size:1.08rem}
+.rm-body{padding:4px 18px 20px}
+.rm-sub{margin-top:16px}
+.rm-pts{gap:8px 20px;margin-top:12px;font-size:.91rem}
+.rm-groups{gap:20px 24px;margin-top:18px}
+.rm-path span{padding:7px 14px;font-size:.86rem}
+.tm-grid{gap:38px 20px;margin-top:44px}
+.tm-ph{border-radius:18px}
+.tm h3,.tm:nth-child(-n+3) h3{font-size:1.2rem;margin-top:13px}
+.tm p{font-size:.9rem}
+.site-footer{padding:54px 0 26px}
+.footer-main{gap:34px;padding-bottom:30px}
+.footer-tagline{margin-top:16px!important;font-size:clamp(1.2rem,2vw,1.6rem)!important}
+.footer-description{margin-top:9px!important;font-size:.9rem!important}
+.footer-pill{margin-top:16px;padding:7px 10px}
+.footer-links{gap:clamp(16px,2.5vw,32px)}
+.footer-col h4{margin-bottom:16px}
+.footer-col ul{gap:10px}
+.footer-col li{font-size:.87rem}
+.footer-disclaimer{padding:17px 20px;gap:18px}
+.footer-bottom{margin-top:18px;padding-top:16px}
+@media(max-width:940px){
+  main > section:not(.hero){padding:48px 0}
+  main > section.roadmap{padding-top:26px}
+  .feature{gap:32px}
+  .feature+.feature{margin-top:64px}
+  .prod-head{margin-bottom:42px}
+  .world-grid{gap:22px}
+  .token-grid{gap:30px}
+  .vision-in{gap:30px}
+  .tm-grid{gap:30px 16px;margin-top:36px}
+  .layer{grid-template-columns:180px 1fr;padding:18px 20px}
+  .cols3{margin-top:32px}
+}
+@media(max-width:620px){
+  main > section:not(.hero){padding:40px 0}
+  main > section.roadmap{padding-top:22px}
+  main > section:not(.hero) h2{font-size:clamp(1.75rem,8vw,2.45rem)}
+  main > section:not(.hero) .lead{font-size:.98rem;line-height:1.55}
+  .pillars{margin-top:32px}
+  .pillar{gap:12px;padding:22px 0}
+  .pillar b{font-size:clamp(1.9rem,10vw,2.7rem)}
+  .prod-head{margin-bottom:30px}
+  .feature{gap:26px}
+  .feature+.feature{margin-top:48px}
+  .f-tag{margin-bottom:12px}
+  .f-text h2{font-size:clamp(1.7rem,7.5vw,2.15rem)}
+  .f-text p{margin-bottom:14px}
+  .ticks{gap:8px;margin-bottom:18px}
+  .card{padding:15px;border-radius:18px}
+  .step{padding:10px 11px}
+  .code{padding:11px 12px;font-size:.72rem;min-height:92px}
+  .lb{height:172px}
+  .lb-row{height:38px}
+  .chart canvas{height:150px}
+  .doors{margin-top:28px;gap:18px}
+  .door{padding:14px 50px 14px 15px}
+  .door-panel{padding:22px;min-height:0}
+  .world-globe{max-width:460px}
+  .world h2{margin-bottom:12px}
+  .world .lead{margin-bottom:18px}
+  .pr{padding:14px;gap:11px}
+  .market-grid{margin-top:28px;gap:10px}
+  .m{padding:17px;min-height:0}
+  .stack,.cols3,.tm-grid{margin-top:30px}
+  .layer{grid-template-columns:1fr;gap:6px;padding:15px 16px}
+  .modular{margin-top:20px;font-size:1rem;padding-left:14px}
+  .pcol{padding:22px 18px}
+  .pcol::before{left:18px}
+  .pcol h3{margin-bottom:12px}
+  .token-grid{gap:24px}
+  .token h2{font-size:clamp(2.2rem,11vw,3rem)}
+  .spec-row{padding:12px 14px;gap:10px}
+  .util{margin:15px 0}
+  .util span{padding:7px 11px;font-size:.82rem}
+  .note{padding:13px 15px}
+  .vbox{padding:22px 18px}
+  .some{font-size:clamp(1.9rem,9.4vw,2.7rem)}
+  .ring-wrap{width:min(260px,68vw);margin-bottom:20px}
+  .cta h2{font-size:clamp(1.9rem,8.8vw,2.7rem)}
+  .cta p{margin:15px auto 22px}
+  .rm-grid{gap:28px}
+  .rm-card summary{padding:13px 14px}
+  .rm-body{padding:3px 14px 16px}
+  .rm-groups{gap:16px}
+  .tm-grid{gap:24px 12px}
+  .tm h3,.tm:nth-child(-n+3) h3{font-size:1rem;margin-top:10px}
+  .tm p{font-size:.82rem}
+  .site-footer{padding:38px 0 calc(20px + env(safe-area-inset-bottom,0px))}
+  .footer-main{gap:26px;padding-bottom:24px}
+  .footer-tagline{margin-top:12px!important}
+  .footer-description{font-size:.86rem!important;line-height:1.6}
+  .footer-pill{margin-top:12px;font-size:.7rem}
+  .footer-links{gap:22px 16px}
+  .footer-col h4{margin-bottom:11px}
+  .footer-col ul{gap:9px}
+  .footer-col li{font-size:.83rem}
+  .footer-disclaimer{padding:14px;gap:6px}
+  .footer-bottom{gap:10px;margin-top:14px;padding-top:13px}
+}
