@@ -1699,3 +1699,37 @@ canvas.globe#globeB {
     transform: scale(1.42);
   }
 }
+
+
+/* Compact only the closed roadmap cards on mobile; expanded content stays unchanged. */
+@media (max-width: 620px) {
+  .roadmap .rm-card:not([open]) > summary {
+    min-height: 0;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  .roadmap .rm-card:not([open]) .rm-t b {
+    font-size: .98rem;
+    line-height: 1.2;
+  }
+  .roadmap .rm-card:not([open]) .rm-t small {
+    font-size: .72rem;
+    gap: 8px;
+    line-height: 1.25;
+  }
+  .roadmap .rm-card:not([open]) .rm-st {
+    padding: 3px 9px;
+    font-size: .68rem;
+    line-height: 1.25;
+  }
+  .roadmap .rm-card:not([open]) .rm-chev {
+    width: 16px;
+    height: 16px;
+  }
+}
+@media (max-width: 380px) {
+  .roadmap .rm-card:not([open]) > summary { padding: 7px 8px; gap: 6px; }
+  .roadmap .rm-card:not([open]) .rm-t b { font-size: .92rem; }
+  .roadmap .rm-card:not([open]) .rm-t small { font-size: .67rem; }
+  .roadmap .rm-card:not([open]) .rm-st { padding: 3px 7px; font-size: .64rem; }
+}
