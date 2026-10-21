@@ -19,7 +19,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@300..700&family=Poppins:wght@700&display=swap" rel="stylesheet" />
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js'); if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('calm');" }} />
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js');" }} />
       </head>
       <body>{children}</body>
     </html>
