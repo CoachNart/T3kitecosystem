@@ -237,8 +237,8 @@ if (CALM) gB.draw(0);
    the video fades in over this and this stops drawing. */
 const heroFx = (() => {
   const cv = $('#heroFx'), vid = $('#heroVideo'), self = {vis: false, off: false, draw() {}};
-  const ctx = cv.getContext('2d');
-  if (!ctx) cv.hidden = true;
+  const ctx = cv?.getContext('2d');
+  if (!cv || !ctx) { if (cv) cv.hidden = true; return self; }
   else {
     const A = 6, TH = 5, FAR = 80, SPEED = 4.2;
     const FOG = [3, 40, 56], LIGHT = [112, 192, 220], DARK = [4, 44, 60], CY = [0, 198, 255];
@@ -527,7 +527,7 @@ setInterval(() => { const h = document.documentElement.scrollHeight; if (Math.ab
 /* ================= CURSOR ================= */
 const cur = {x: -100, y: -100, rx: -100, ry: -100, seen: false};
 let trailFn = null;
-if (FINE && !CALM) {
+if (FINE && !CALM && $('#trail') && $('#ring')) {
   const cv = $('#trail'), c = cv.getContext('2d'), ring = $('#ring'); let parts = [];
   const rs = () => { const d = Math.min(devicePixelRatio, 2); cv.width = innerWidth * d; cv.height = innerHeight * d; c.setTransform(d, 0, 0, d, 0, 0); };
   rs(); addEventListener('resize', rs);
@@ -675,7 +675,8 @@ new IntersectionObserver(es => { typedVis = es[0].isIntersecting; }, {threshold:
 })();
 
 /* ================= KITSETUPS: live candles ================= */
-const cvs = $('#candles'), cx = cvs.getContext('2d');
+const cvs = $('#candles'), cx = cvs?.getContext('2d');
+if (cvs && cx) {
 const cArr = []; let cVis = false;
 (function seedCandles() {
   let p = 100;
@@ -710,6 +711,7 @@ function paintCandles() {
   setTimeout(newCandle, rnd(700, 2400));
 })();
 paintCandles(); addEventListener('resize', paintCandles);
+}
 
 /* ================= DOOR PICKER ================= */
 const DOORS = [
