@@ -1,7 +1,9 @@
-/* Generated from the supplied source markup; preserve structure and styling. */
+"use client";
+
+import { useEffect, useRef } from "react";
 import type { JSX } from "react";
 
-export default function Team(): JSX.Element {
+export default function Team(): JSX.Element {\n  const carouselRef = useRef<HTMLDivElement>(null);\n\n  useEffect(() => {\n    const track = carouselRef.current;\n    if (!track || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;\n    const timer = window.setInterval(() => {\n      const firstCard = track.querySelector<HTMLElement>(".tm");\n      if (!firstCard) return;\n      const gap = Number.parseFloat(window.getComputedStyle(track).columnGap || "0") || 0;\n      const step = firstCard.getBoundingClientRect().width + gap;\n      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;\n      track.scrollTo({ left: atEnd ? 0 : track.scrollLeft + step, behavior: "smooth" });\n    }, 4800);\n    return () => window.clearInterval(timer);\n  }, []);
   return (
     <section className="team" id="team">
       <div className="wrap">
@@ -11,7 +13,7 @@ export default function Team(): JSX.Element {
         <p className="lead rv">
           Product, engineering, design, community and partnerships, working from Africa for a global audience.
         </p>
-        <div className="tm-grid">
+        <div className="tm-grid" ref={carouselRef}>
           <article className="tm rv">
             <div className="tm-ph" data-photo="nathan" data-name="Nathan Timothy">
               <svg viewBox="265 21 713 689" aria-hidden="true">
