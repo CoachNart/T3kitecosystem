@@ -1613,7 +1613,7 @@ canvas.globe#globeB {
 }
 .card, .door, .door-panel, .pr, .m, .pcol, .vbox, .rm-card, .tm-ph,
 #alliances .al, .site-footer .footer-contact-link, .site-footer .footer-back-top span {
-  border-color: rgba(0, 198, 255, .24);
+  border: 1px solid rgba(0, 198, 255, .24);
 }
 .card, .door-panel, .pr, .m, .pcol, .vbox, .rm-card, #alliances .al {
   box-shadow: inset 0 1px 0 rgba(226, 248, 255, .045), 0 10px 30px rgba(0, 0, 0, .12);
