@@ -12,11 +12,7 @@ export default function Footer(): JSX.Element {
               </svg>
               <span>T3Kit</span>
             </a>
-            <p className="footer-tagline">Web3, for everyone, everywhere.</p>
-            <p className="footer-description">
-              One connected ecosystem helping people learn, play, build, and participate in the digital economy.
-            </p>
-            <div className="footer-pill"><span aria-hidden="true" /> Building from Africa. Built for everyone.</div>
+            <p className="footer-tagline">The future is built together.</p>
           </div>
 
           <nav className="footer-links" aria-label="Footer navigation">
@@ -59,7 +55,6 @@ export default function Footer(): JSX.Element {
 
         <div className="footer-bottom">
           <span>© <span id="yr">2026</span> T3Kit. All rights reserved.</span>
-          <span className="footer-bottom-note">Learn <i /> Play <i /> Build <i /> Trade</span>
           <a href="#top" className="footer-back-top">Back to top <span aria-hidden="true">↑</span></a>
         </div>
       </div>
