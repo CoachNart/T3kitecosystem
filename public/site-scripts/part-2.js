@@ -19,7 +19,7 @@ const CONFIG = {
 const CALM = document.documentElement.classList.contains('calm');
 const FINE = matchMedia('(pointer:fine)').matches;
 const $ = (s, r = document) => r.querySelector(s);
-const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const $ = (s, r = document) => r ? [...r.querySelectorAll(s)] : [];
 const rnd = (a, b) => a + Math.random() * (b - a);
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const D = Math.PI / 180;
@@ -626,7 +626,7 @@ function tickStars(t) {
 }
 
 /* ================= SCROLL-LINKED ================= */
-const stack = $('#stack'), layers = $$('.layer', stack).map((el, i) => ({el, ox: (i % 2 ? 1 : -1) * rnd(120, 380), rot: rnd(-5, 5) * (i % 2 ? 1 : -1)}));
+const stack = $('#stack'), layers = (stack ? $('.layer', stack) : []).map((el, i) => ({el, ox: (i % 2 ? 1 : -1) * rnd(120, 380), rot: rnd(-5, 5) * (i % 2 ? 1 : -1)}));
 const lines = $$('.some span'), ringText = $('#ringText'), core = $('#core');
 let lastY = scrollY, ang = 0;
 
@@ -647,13 +647,15 @@ function tick(t) {
       k.el.style.transform = `translate3d(${k.x.toFixed(1)}px,0,0) skewX(${clamp(-scrollVel * .35, -6, 6).toFixed(2)}deg)`;
     });
     sparks.forEach(s => { s.s.style.translate = `0 ${(y * s.k).toFixed(0)}px`; });
-    const sr = stack.getBoundingClientRect();
-    layers.forEach((l, i) => {
-      const p = clamp((vh * .95 - sr.top) / (vh * .55) - i * .14), e = 1 - Math.pow(1 - p, 3);
-      l.el.style.setProperty('--lx', (l.ox * (1 - e)).toFixed(1) + 'px');
-      l.el.style.setProperty('--lr', (l.rot * (1 - e)).toFixed(2) + 'deg');
-      l.el.style.setProperty('--lo', (.1 + .9 * e).toFixed(2));
-    });
+    if (stack && layers.length) {
+      const sr = stack.getBoundingClientRect();
+      layers.forEach((l, i) => {
+        const p = clamp((vh * .95 - sr.top) / (vh * .55) - i * .14), e = 1 - Math.pow(1 - p, 3);
+        l.el.style.setProperty('--lx', (l.ox * (1 - e)).toFixed(1) + 'px');
+        l.el.style.setProperty('--lr', (l.rot * (1 - e)).toFixed(2) + 'deg');
+        l.el.style.setProperty('--lo', (.1 + .9 * e).toFixed(2));
+      });
+    }
     lines.forEach(s => { const r = s.getBoundingClientRect(); s.style.setProperty('--f', (clamp((vh * .82 - r.top) / (vh * .3)) * 100).toFixed(1) + '%'); });
     ang += .12 + Math.abs(scrollVel) * .12 + Math.sin(t * .0016) * .1;
     // The closing CTA artwork no longer contains the legacy ringText/core nodes.
@@ -674,8 +676,8 @@ const typed = $('#typed'), bar = $('#labBar');
 const full = ['// your first onchain app', 'function gm(name) {', '  return "gm, " + name;', '}', 'gm("builder");'].join('\n');
 const hl = s => s.replace(/(\/\/.*)/g, '<span class="c">$1</span>').replace(/\b(function|return)\b/g, '<span class="k">$1</span>');
 let typedVis = false, ti = 0;
-new IntersectionObserver(es => { typedVis = es[0].isIntersecting; }, {threshold: .3}).observe(typed);
-(function typeStep() {
+if (typed) new IntersectionObserver(es => { typedVis = es[0].isIntersecting; }, {threshold: .3}).observe(typed);
+if (typed && bar) (function typeStep() {
   if (CALM) { typed.innerHTML = hl(full); bar.style.width = '70%'; return; }
   let delay = rnd(35, 150);
   if (typedVis) {
