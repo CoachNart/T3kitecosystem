@@ -27,8 +27,6 @@ export default function Footer(): JSX.Element {
             <div className="footer-col">
               <h4>Ecosystem</h4>
               <ul>
-                <li><a href="#mission">Our mission</a></li>
-                <li><a href="#world">Our vision</a></li>
                 <li><a href="#roadmap">Roadmap</a></li>
                 <li><a href="#alliances">Partners</a></li>
                 <li><a href="#kit">$KIT token</a></li>
