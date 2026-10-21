@@ -151,6 +151,8 @@ export default function Products(): JSX.Element {
             </div>
           </div>
         </div>
+        </div>
+        </div>
         <div className="feature" id="kitsetups">
           <div className="f-text rv">
             <span className="f-tag">
