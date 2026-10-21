@@ -492,8 +492,18 @@ function startObservers() {
   $$('.scatter,.rv').forEach(el => io.observe(el));
 }
 const intro = $('#intro');
-if (CALM) { $$('.scatter,.rv').forEach(e => e.classList.add('in')); }
-else if (intro) setTimeout(() => { intro.classList.add('leave'); startObservers(); setTimeout(() => intro.remove(), 1000); }, 2100);
+if (CALM) {
+  $('.scatter,.rv').forEach(e => e.classList.add('in'));
+} else if (intro) {
+  setTimeout(() => {
+    intro.classList.add('leave');
+    startObservers();
+    setTimeout(() => { if (intro.isConnected) intro.remove(); }, 1000);
+  }, 2100);
+} else {
+  // The current JSX page has no intro overlay; don't skip hero/reveal observers.
+  startObservers();
+}
 
 /* ================= KINETIC HERO TYPE ================= */
 const kinChars = $$('.kin .ch').map(el => ({el, x: 0, y: 0, r: 0}));
