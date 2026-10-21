@@ -16,7 +16,8 @@ document.addEventListener('click',e=>{
 });
 addEventListener('hashchange',route);addEventListener('popstate',route);
 if(/^#(whitepaper|wp-)/.test(location.hash))route();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;links.forEach(a=>{const o=a.hash==='#'+e.target.id;a.classList.toggle('on',o);if(o)a.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'})})}),{rootMargin:'-30% 0px -60% 0px'});
+const navStrip=wp.querySelector('.wpin');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;links.forEach(a=>{const o=a.hash==='#'+e.target.id;a.classList.toggle('on',o);if(o&&navStrip){const left=a.offsetLeft-navStrip.offsetLeft-(navStrip.clientWidth-a.offsetWidth)/2;navStrip.scrollTo({left,behavior:'smooth'})}})}),{rootMargin:'-30% 0px -60% 0px'});
 wp.querySelectorAll('section').forEach(s=>io.observe(s));
 addEventListener('scroll',()=>{if(!R.classList.contains('wpv'))return;const h=R.scrollHeight-innerHeight;bar.style.width=Math.min(100,scrollY/h*100)+'%'},{passive:true});
 const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}}),{threshold:.08});
